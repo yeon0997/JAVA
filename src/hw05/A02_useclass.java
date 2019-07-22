@@ -1,21 +1,21 @@
 /*
- * í´ë˜ìŠ¤ì˜ ìƒì„±ì constructor\
- * í´ë˜ìŠ¤ë¡œë¶€í„° ê°ì²´ë¥¼ ìƒì„±í•œë‹¤
- * í´ë˜ìŠ¤ëŠ” ê¸°ë³¸ì ìœ¼ë¡œ ìƒì‚°ìë¥¼ í¬í•¨í•œë‹¤
+ * ?´?˜?Š¤?˜ ?ƒ?„±? constructor\
+ * ?´?˜?Š¤ë¡œë??„° ê°ì²´ë¥? ?ƒ?„±?•œ?‹¤
+ * ?´?˜?Š¤?Š” ê¸°ë³¸? ?œ¼ë¡? ?ƒ?‚°?ë¥? ?¬?•¨?•œ?‹¤
  * 
  */
 
 
-package ch05;
+package hw05;
 
 public class A02_useclass {
 
 	public static void main(String[] args) { 
 
 		/*
-		Student st1 = new Student(); //st1ì€ ì²¨ì¡°ë³€ìˆ˜
-		Student st2 = new Student("í™ê¸¸ë™");
-		Student st3 = new Student(1, "ë°•ë¬¸ìˆ˜", 4, "ì»´í“¨í„°ê³¼", "ì²­ì›êµ¬");
+		Student st1 = new Student(); //st1?? ì²¨ì¡°ë³??ˆ˜
+		Student st2 = new Student("?™ê¸¸ë™");
+		Student st3 = new Student(1, "ë°•ë¬¸?ˆ˜", 4, "ì»´í“¨?„°ê³?", "ì²??›êµ?");
 		
 		st1.study();
 		st2.study();
@@ -25,9 +25,9 @@ public class A02_useclass {
 		////////////////////////////////////////////////////////////////
 		
 		//Student st1 = new Student();
-	//	st1.setname("ì‹ ì •ì—°"); //setnameì´ë¼ëŠ” ë©”ì†Œë“œë¥¼ í†µí•´ private ë³€ìˆ˜ë¥¼ ì‚¬ìš©
+	//	st1.setname("?‹ ? •?—°"); //setname?´?¼?Š” ë©”ì†Œ?“œë¥? ?†µ?•´ private ë³??ˆ˜ë¥? ?‚¬?š©
 	//	st1.id = 1;
-	//	st1.address = "ì²­ì›êµ¬";	
+	//	st1.address = "ì²??›êµ?";	
 	//	//System.out.println(st1.getname());
 	//	System.out.println(st1.id);
 	//	System.out.println(st1.address);

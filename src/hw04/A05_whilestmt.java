@@ -1,11 +1,11 @@
-package ch04;
+package hw04;
 
 public class A05_whilestmt {
 
 	public static void main(String[] args) {
 
 		/*
-		 * 1~10ê¹Œì§€ í•©ê³„ë¥¼ êµ¬í•˜ëŠ” í”„ë¡œê·¸ë¨ì„ whileë¬¸ì„ ì´ìš©í•˜ì—¬ ì‘ì„±
+		 * 1~10ê¹Œì? ?•©ê³„ë?? êµ¬í•˜?Š” ?”„ë¡œê·¸?¨?„ whileë¬¸ì„ ?´?š©?•˜?—¬ ?‘?„±
 		 */
 		
 		int num = 1;
@@ -50,8 +50,8 @@ public class A05_whilestmt {
 			
 		}//end of while
 		
-		System.out.println("ì§ìˆ˜ì˜ í•©ì€ " + even);
-		System.out.println("í™€ìˆ˜ì˜ í•©ì€ " + odd);
+		System.out.println("ì§ìˆ˜?˜ ?•©?? " + even);
+		System.out.println("???ˆ˜?˜ ?•©?? " + odd);
 		
 	}
 

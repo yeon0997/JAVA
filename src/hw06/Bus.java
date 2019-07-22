@@ -1,4 +1,4 @@
-package CH06;
+package hw06;
 
 public class Bus {
 
@@ -20,8 +20,8 @@ public class Bus {
 	}
 	
 	public void showinfo() {
-		System.out.println("踰꾩뒪" + busnumber + "踰덉쓽 �듅媛앹�" 
-						+ passengercount + "紐낆씠怨�, �닔�엯�� " + money + "�엯�땲�떎.");
+		System.out.println("踰꾩?��" + busnumber + "踰덉?�� �듅媛앹�?" 
+						+ passengercount + "紐낆?��?��, �닔�엯�� " + money + "�엯�땲�떎.");
 	}
 	
 }

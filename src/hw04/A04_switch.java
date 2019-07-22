@@ -1,4 +1,4 @@
-package ch04;
+package hw04;
 
 public class A04_switch {
 
@@ -14,7 +14,7 @@ public class A04_switch {
 			System.out.println("짝수");
 			break;
 		case 1:
-			System.out.println("홀수");
+			System.out.println("???��");
 			break;
 		default:
 			break;

@@ -1,4 +1,4 @@
-package ch04;
+package hw04;
 
 
 import java.util.Scanner;
@@ -12,11 +12,11 @@ Scanner sc = new Scanner(System.in);
 		int a, b;
 		String operator;
 		
-		System.out.println("ìˆ«ì a");
+		System.out.println("?ˆ«? a");
 		a = sc.nextInt();
-		System.out.println("ìˆ«ì b");
+		System.out.println("?ˆ«? b");
 		b = sc.nextInt();
-		System.out.println("ì—°ì‚°ì");
+		System.out.println("?—°?‚°?");
 		operator = sc.next();
 		
 		switch(operator) {

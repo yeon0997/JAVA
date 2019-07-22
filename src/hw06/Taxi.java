@@ -1,4 +1,4 @@
-package CH06;
+package hw06;
 
 public class Taxi {
 	   int companyName;             // 회사 이름

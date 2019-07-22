@@ -1,6 +1,6 @@
-package ch05;
+package hw05;
 
-//í´ë˜ìŠ¤ì„ ì–¸
+//?´?˜?Š¤?„ ?–¸
 public class Student{
 	int id;
 	private String name;
@@ -10,15 +10,15 @@ public class Student{
 	
 	//original constructor
 	public Student() {
-		System.out.println("ê¸°ë³¸ìƒì„±ì í˜¸ì¶œ");
+		System.out.println("ê¸°ë³¸?ƒ?„±? ?˜¸ì¶?");
 	}
 	
 	public Student(String p_name) {
 		name = p_name;
-		System.out.println("ì´ë¦„ì„ ê°€ì§„ ìƒì„±ì í˜¸ì¶œ");
+		System.out.println("?´ë¦„ì„ ê°?ì§? ?ƒ?„±? ?˜¸ì¶?");
 	}
 	
-	//í’€ íŒ¨ëŸ¬ë¯¸í„° ìƒì„±ì
+	//?? ?Œ¨?Ÿ¬ë¯¸í„° ?ƒ?„±?
 	public Student(int p_id,String p_name, int p_grade, String p_dept, String p_address) {
 		id = p_id;
 		name = p_name;
@@ -26,7 +26,7 @@ public class Student{
 		dept = p_dept;
 		address = p_address;
 		
-		System.out.println("full parameter ìƒì„±ì í˜¸ì¶œ");
+		System.out.println("full parameter ?ƒ?„±? ?˜¸ì¶?");
 		
 	}
 	
@@ -39,8 +39,8 @@ public class Student{
 		return name;
 	}
 	
-	public void study() {	//ë©”ì†Œë“œ
-		System.out.println(name + "ì´(ê°€) " + dept +  "ë¥¼ ê³µë¶€í•œë‹¤.");
+	public void study() {	//ë©”ì†Œ?“œ
+		System.out.println(name + "?´(ê°?) " + dept +  "ë¥? ê³µë??•œ?‹¤.");
 	}
 	
 	public void showInfo() {

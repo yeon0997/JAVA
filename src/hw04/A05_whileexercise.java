@@ -1,17 +1,17 @@
 /*
- * ì˜ì‚¬ì½”ë“œ
- * 1. ë³€ìˆ˜ë¥¼ ì„ ì–¸í•œë‹¤
- * 2. beginnumì™€ endnumë¥¼ ì…ë ¥ë°›ëŠ”ë‹¤
- * 3. num = beginnumë¡œ ì…‹í•œë‹¤
- * 4. numê°€ endnumë³´ë‹¤ ì‘ê±°ë‚˜ ê°™ìœ¼ë©´ ë°˜ë³µ
+ * ?˜?‚¬ì½”ë“œ
+ * 1. ë³??ˆ˜ë¥? ?„ ?–¸?•œ?‹¤
+ * 2. beginnum?? endnumë¥? ?…? ¥ë°›ëŠ”?‹¤
+ * 3. num = beginnumë¡? ?…‹?•œ?‹¤
+ * 4. numê°? endnumë³´ë‹¤ ?‘ê±°ë‚˜ ê°™ìœ¼ë©? ë°˜ë³µ
  * 4-1. sum += num
  * 4-2. num++
- * 5. í•©ê³„ë¥¼ ì¶œë ¥í•œë‹¤
+ * 5. ?•©ê³„ë?? ì¶œë ¥?•œ?‹¤
  */
 
 
 
-package ch04;
+package hw04;
 
 import java.util.Scanner;
 
@@ -25,11 +25,11 @@ public class A05_whileexercise {
 		int start, end, sum = 0, origin = 0;
 				
 		
-		System.out.println("ì‹œì‘ ìˆ˜");
+		System.out.println("?‹œ?‘ ?ˆ˜");
 		start = sc.nextInt();
 		origin = start;
 		
-		System.out.println("ë ìˆ˜");
+		System.out.println("? ?ˆ˜");
 		end = sc.nextInt();
 		
 		while(end >= start) {
@@ -41,10 +41,10 @@ public class A05_whileexercise {
 		
 		int num, beginnum, endnum, sum = 0;
 		
-		System.out.println("ì‹œì‘ìˆ˜ ");
+		System.out.println("?‹œ?‘?ˆ˜ ");
 		beginnum = sc.nextInt();
 		
-		System.out.println("ë ìˆ˜");
+		System.out.println("? ?ˆ˜");
 		endnum = sc.nextInt();
 		
 		num = beginnum;
@@ -59,7 +59,7 @@ public class A05_whileexercise {
 			num++;
 		}
 		
-		//System.out.println(beginnum + "ë¶€í„° " + endnum + "ê¹Œì§€ì˜ í•©ì€ " + sum);
+		//System.out.println(beginnum + "ë¶??„° " + endnum + "ê¹Œì??˜ ?•©?? " + sum);
 		
 	}
 

@@ -1,4 +1,4 @@
-package ch04;
+package hw04;
 
 
 public class A01_ifstatement {
@@ -9,17 +9,17 @@ public class A01_ifstatement {
 		
 		/*if(age <= 10)
 		{
-			System.out.println(age + "ì„¸ " + "ì…ì¥ë£Œ 1000ì›ì…ë‹ˆë‹¤.");
+			System.out.println(age + "?„¸ " + "?…?¥ë£? 1000?›?…?‹ˆ?‹¤.");
 		}
 		
 		else if(age <= 20)
 		{
-			System.out.println(age + "ì„¸ " + "ì…ì¥ë£Œ 2000ì›ì…ë‹ˆë‹¤.");
+			System.out.println(age + "?„¸ " + "?…?¥ë£? 2000?›?…?‹ˆ?‹¤.");
 		}
 		
 		else
 		{	
-			System.out.println(age + "ì„¸ " + "ì…ì¥ë£Œ 3000ì›ì…ë‹ˆë‹¤.");	
+			System.out.println(age + "?„¸ " + "?…?¥ë£? 3000?›?…?‹ˆ?‹¤.");	
 		}
 		*/
 		
@@ -38,7 +38,7 @@ public class A01_ifstatement {
 			money = 3000;;	
 		}
 		
-		System.out.println(age + "ì„¸ " + "ì…ì¥ë£Œ " + money +"ì›ì…ë‹ˆë‹¤.");
+		System.out.println(age + "?„¸ " + "?…?¥ë£? " + money +"?›?…?‹ˆ?‹¤.");
 		
 	} //ë©”ì¸ì¢…ë£Œ
 

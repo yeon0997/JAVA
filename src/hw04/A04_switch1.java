@@ -1,4 +1,4 @@
-package ch04;
+package hw04;
 
 import java.util.Scanner;
 
@@ -12,7 +12,7 @@ public class A04_switch1 {
 		int a;
 		int result = 0;
 		
-		System.out.println("ìˆ«ìë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”.");
+		System.out.println("?ˆ«?ë¥? ?…? ¥?•´ì£¼ì„¸?š”.");
 		a = sc.nextInt();
 		
 		if(a % 3 == 0)
@@ -26,16 +26,16 @@ public class A04_switch1 {
 		
 		switch(result) {
 		case 1:  
-			System.out.println("3ì˜ ë°°ìˆ˜");
+			System.out.println("3?˜ ë°°ìˆ˜");
 			break;
 		case 2:  
-			System.out.println("4ì˜ ë°°ìˆ˜");
+			System.out.println("4?˜ ë°°ìˆ˜");
 			break;
 		case 3:  
-			System.out.println("5ì˜ ë°°ìˆ˜");
+			System.out.println("5?˜ ë°°ìˆ˜");
 			break;
 		default :
-			System.out.println("3, 4, 5 ë°°ìˆ˜ ì´ì™¸ì˜ ìˆ˜");
+			System.out.println("3, 4, 5 ë°°ìˆ˜ ?´?™¸?˜ ?ˆ˜");
 			break;
 		}
 		

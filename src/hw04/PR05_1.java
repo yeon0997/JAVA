@@ -1,4 +1,4 @@
-package ch04;
+package hw04;
 
 public class PR05_1 {
 
@@ -11,7 +11,7 @@ public class PR05_1 {
 			
 			if(i % 2 == 1)
 				continue;
-			System.out.println(i + "ë‹¨");
+			System.out.println(i + "?‹¨");
 			
 			for(j = 1; j <= 9; j++)
 				System.out.println(i + " * " + j + " = " + (i * j));

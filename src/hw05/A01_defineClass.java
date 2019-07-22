@@ -1,37 +1,37 @@
 /*
- * í´ë˜ìŠ¤ ì •ì˜í•˜ê¸°
- * [ì ‘ê·¼ì œì–´ì] class í´ë˜ìŠ¤ì´ë¦„{
- * ë©¤ë²„ë³€ìˆ˜;
- * ë©”ì„œë“œ;
+ * ?´?˜?Š¤ ? •?˜?•˜ê¸?
+ * [? ‘ê·¼ì œ?–´?] class ?´?˜?Š¤?´ë¦?{
+ * ë©¤ë²„ë³??ˆ˜;
+ * ë©”ì„œ?“œ;
  * }
  * 
- * ì˜ˆ)
+ * ?˜ˆ)
  * class Student {
- * í•™ë²ˆ;
- * ì„±ëª…;
- * í•™ë…„;
+ * ?•™ë²?;
+ * ?„±ëª?;
+ * ?•™?…„;
  * ì£¼ì†Œ;
  * 
- * ê³µë¶€í•œë‹¤();
+ * ê³µë??•œ?‹¤();
  * }
  * 
- * class ì´ë¦„ì€ ëŒ€ë¬¸ìë¡œ ì‹œì‘
- * í•˜ë‚˜ì˜ javaíŒŒì¼ì— í•˜ë‚˜ì˜ í´ë˜ìŠ¤ë¥¼ ë‘ëŠ” ê²ƒì´ ì›ì¹™ì´ë‚˜,
- * ë‹¤ìˆ˜ì˜ í´ë˜ìŠ¤ê°€ ê°™ì´ ìˆëŠ” ê²½ìš° public í´ë˜ìŠ¤ëŠ” ë‹¨ í•˜ë‚˜ì´ë©°,
- * public í´ë˜ìŠ¤ì™€ ìë°” íŒŒì¼ì˜ ì´ë¦„ì€ ë™ì¼í•´ì•¼ í•œë‹¤.
+ * class ?´ë¦„ì? ??ë¬¸ìë¡? ?‹œ?‘
+ * ?•˜?‚˜?˜ java?ŒŒ?¼?— ?•˜?‚˜?˜ ?´?˜?Š¤ë¥? ?‘?Š” ê²ƒì´ ?›ì¹™ì´?‚˜,
+ * ?‹¤?ˆ˜?˜ ?´?˜?Š¤ê°? ê°™ì´ ?ˆ?Š” ê²½ìš° public ?´?˜?Š¤?Š” ?‹¨ ?•˜?‚˜?´ë©?,
+ * public ?´?˜?Š¤?? ?ë°? ?ŒŒ?¼?˜ ?´ë¦„ì? ?™?¼?•´?•¼ ?•œ?‹¤.
  */
-package ch05;
+package hw05;
 
 public class A01_defineClass {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Student gildong = new Student();	//studentë¼ëŠ” í´ë˜ìŠ¤ë¥¼ ê°€ì§€ê³  gildongì´ë¼ëŠ” ê°ì²´ë¥¼ ë§Œë“¤ì–´ë¼
+		Student gildong = new Student();	//student?¼?Š” ?´?˜?Š¤ë¥? ê°?ì§?ê³? gildong?´?¼?Š” ê°ì²´ë¥? ë§Œë“¤?–´?¼
 		Student chunhyang = new Student();
-		//gildong.name = "í™ê¸¸ë™";
-		gildong.address = "ì²­ì›êµ¬";
-	//	chunhyang.name = "ì„±ì¶˜í–¥";
-		chunhyang.address = "ìƒë‹¹êµ¬";
+		//gildong.name = "?™ê¸¸ë™";
+		gildong.address = "ì²??›êµ?";
+	//	chunhyang.name = "?„±ì¶˜í–¥";
+		chunhyang.address = "?ƒ?‹¹êµ?";
 		
 		gildong.study();
 		chunhyang.study();

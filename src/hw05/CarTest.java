@@ -1,16 +1,16 @@
 /*
- * ìŠ¤íƒë©”ëª¨ë¦¬ì— ì¤‘ì„¸ì¹´ê°€ ìƒì„±ë¨
+ * ?Š¤?ƒë©”ëª¨ë¦¬ì— ì¤‘ì„¸ì¹´ê? ?ƒ?„±?¨
  * 
  */
 
 
-package ch05;
+package hw05;
 
 public class CarTest {
 
 	public static void main(String[] args) {
 
-		Car jungseCar = new Car(); //ìƒì„±ì constructor
+		Car jungseCar = new Car(); //?ƒ?„±? constructor
 		System.out.println(jungseCar);
 		
 		Car c = jungseCar.returnitself();

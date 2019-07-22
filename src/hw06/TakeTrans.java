@@ -1,4 +1,4 @@
-package CH06;
+package hw06;
 
 public class TakeTrans {
 

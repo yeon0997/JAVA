@@ -1,4 +1,4 @@
-package chapter6.staticex;
+package hw06;
 
 public class Student3 {
 	

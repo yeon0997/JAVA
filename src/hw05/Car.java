@@ -1,23 +1,23 @@
-package ch05;
+package hw05;
 
 public class Car {
-	// member ë³€ìˆ˜, field, ì†ì„±
+	// member ë³??ˆ˜, field, ?†?„±
 	private String color;
 	private String engine;
 	private String inner;
 	private int speed = 0;
 	
 	
-	//car()ë‘ car(string pcolor)ì€ ë‹¤í˜•ì„± ì¤‘ ìƒì„±ì overload
-	//overload ë™ì¼í•œ ì´ë¦„ì„ ê°€ì§€ê³  ì—¬ëŸ¬ê°œì˜ ë©”ì†Œë“œë¥¼ ë§Œë“œëŠ”ê²ƒ íŒŒë¼ë¯¸í„°ì˜ ê°¯ìˆ˜ì™€ íƒ€ì…ìœ¼ë¡œ êµ¬ë¶„
-	//overriding ìƒì†ì˜ ê°œë…ì´ ìˆì–´ì•¼í•¨
+	//car()?‘ car(string pcolor)?? ?‹¤?˜•?„± ì¤? ?ƒ?„±? overload
+	//overload ?™?¼?•œ ?´ë¦„ì„ ê°?ì§?ê³? ?—¬?Ÿ¬ê°œì˜ ë©”ì†Œ?“œë¥? ë§Œë“œ?Š”ê²? ?ŒŒ?¼ë¯¸í„°?˜ ê°??ˆ˜?? ???…?œ¼ë¡? êµ¬ë¶„
+	//overriding ?ƒ?†?˜ ê°œë…?´ ?ˆ?–´?•¼?•¨
 	
 	public Car() {
-		this("ê²€ì •", "ë””ì ¤","íŒ¨ë¸Œë¦­");
+		this("ê²?? •", "?””? ¤","?Œ¨ë¸Œë¦­");
 	}
 	
 	public Car(String color, String engine, String inner) {
-		//ë³€ìˆ˜ë¥¼ ë°›ëŠ” ìƒì„±ì
+		//ë³??ˆ˜ë¥? ë°›ëŠ” ?ƒ?„±?
 		this.color = color;
 		this.engine = engine;
 		this.inner = inner;
@@ -25,18 +25,18 @@ public class Car {
 	
 	Car returnitself()
 	{
-		return this; //ì´ í´ë˜ìŠ¤ë¡œ ë¶€í„° ìƒì„±ëœ ê°ì²´ì˜ ì‹œì‘ ì£¼ì†Œê°’ì„ ë¦¬í„´í•œë‹¤.
+		return this; //?´ ?´?˜?Š¤ë¡? ë¶??„° ?ƒ?„±?œ ê°ì²´?˜ ?‹œ?‘ ì£¼ì†Œê°’ì„ ë¦¬í„´?•œ?‹¤.
 	}
 	
 	
 ///////////////////////////////////////////////////////////////////////////////////////
-	public void setspeed(int value) { //privateìœ¼ë¡œ ëœ ë³€ìˆ˜ì˜ ê°’ì„ ë³€ê²½í•˜ê¸° ìœ„í•œ ë©”ì†Œë“œ
+	public void setspeed(int value) { //private?œ¼ë¡? ?œ ë³??ˆ˜?˜ ê°’ì„ ë³?ê²½í•˜ê¸? ?œ„?•œ ë©”ì†Œ?“œ
 		speed = value;
 	}
 	
-	// member ë©”ì†Œë“œ, ë©”ì†Œë“œ, í•¨ìˆ˜
-	//ê°€ì† ë©”ì†Œë“œ
-	public void upspeed(int value){ //ë‹¤ë¥¸ ê³³ì—ì„œë„ ì‚¬ìš©í•  ìˆ˜ ìˆê³ , ë°˜í™˜ê°’ì´ ì—†ëŠ” ë©”ì†Œë“œ
+	// member ë©”ì†Œ?“œ, ë©”ì†Œ?“œ, ?•¨?ˆ˜
+	//ê°??† ë©”ì†Œ?“œ
+	public void upspeed(int value){ //?‹¤ë¥? ê³³ì—?„œ?„ ?‚¬?š©?•  ?ˆ˜ ?ˆê³?, ë°˜í™˜ê°’ì´ ?—†?Š” ë©”ì†Œ?“œ
 		if(speed + value >= 300)
 			speed = 300;		
 		else
@@ -51,7 +51,7 @@ public class Car {
 	}
 	
 	public void showinfo() {
-		System.out.println("ì»¬ëŸ¬ : " + color +", " + "í˜„ì¬ì†ë„ëŠ” " + speed);
+		System.out.println("ì»¬ëŸ¬ : " + color +", " + "?˜„?¬?†?„?Š” " + speed);
 	}
 ////////////////////////////////////////////////////////////////
 	/**

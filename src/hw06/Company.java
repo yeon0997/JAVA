@@ -1,17 +1,17 @@
-package ch06;
+package hw06;
 
 public class Company {
 
-	//privateìƒì„±ì
-	private static Company instance = new Company(); //ë”ì´ìƒ ì»´íŒŒë‹ˆë¼ëŠ” ì¸ìŠ¤í„´ìŠ¤ëŠ” ë§Œë“¤ ìˆ˜ ì—†ìŒ
+	//private?ƒ?„±?
+	private static Company instance = new Company(); //?”?´?ƒ ì»´íŒŒ?‹ˆ?¼?Š” ?¸?Š¤?„´?Š¤?Š” ë§Œë“¤ ?ˆ˜ ?—†?Œ
 	
 	private Company() {} 
 	
 	public static Company getinstance() {
-		if(instance == null) {	//ê¸°ì¡´ì— ë§Œë“¤ì–´ì§„ ì¸ìŠ¤í„´ìŠ¤ê°€ ì—†ë‹¤ë©´
-			instance = new Company(); //ì¸ìŠ¤í„´ìŠ¤ë¥¼ ë§Œë“¤ê³ 
+		if(instance == null) {	//ê¸°ì¡´?— ë§Œë“¤?–´ì§? ?¸?Š¤?„´?Š¤ê°? ?—†?‹¤ë©?
+			instance = new Company(); //?¸?Š¤?„´?Š¤ë¥? ë§Œë“¤ê³?
 		}
-		return instance; //ìˆë‹¤ë©´ ì›ë˜ìˆë˜ ì¸ìŠ¤í„´ìŠ¤ë¥¼ ë°˜í™˜í•˜ë¼
+		return instance; //?ˆ?‹¤ë©? ?›?˜?ˆ?˜ ?¸?Š¤?„´?Š¤ë¥? ë°˜í™˜?•˜?¼
 	}
 	
 	

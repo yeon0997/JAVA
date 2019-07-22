@@ -1,13 +1,13 @@
-package ch07;
+package hw07;
 
 public class Book {
 
 	private String bookname;
 	private String author;
 	
-	public Book() {}	//ê¸°ë³¸ìƒì„±ì
+	public Book() {}	//ê¸°ë³¸?ƒ?„±?
 	
-	public Book(String bookname, String author) {	//ì±…ì´ë¦„ê³¼ ì €ìë¥¼ ë°›ëŠ” ìƒì„±ì
+	public Book(String bookname, String author) {	//ì±…ì´ë¦„ê³¼ ???ë¥? ë°›ëŠ” ?ƒ?„±?
 		this.bookname = bookname;
 		this.author = author;
 	}

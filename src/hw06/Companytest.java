@@ -1,10 +1,10 @@
-package ch06;
+package hw06;
 
 public class Companytest {
 
 	public static void main(String[] args) {
 
-		//Company mycompany1 = new Company(); //ìƒì„±ìë¥¼ í†µí•´ì„œ ê°ì²´ë¥¼ ìƒì„±í•  ìˆ˜ ì—†ë‹¤
+		//Company mycompany1 = new Company(); //?ƒ?„±?ë¥? ?†µ?•´?„œ ê°ì²´ë¥? ?ƒ?„±?•  ?ˆ˜ ?—†?‹¤
 		
 		Company mycompany1 = Company.getinstance();
 		Company mycompany2 = Company.getinstance();

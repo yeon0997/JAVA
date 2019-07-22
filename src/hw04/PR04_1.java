@@ -1,4 +1,4 @@
-package ch04;
+package hw04;
 
 import java.util.Scanner;
 
@@ -11,11 +11,11 @@ public class PR04_1 {
 		int a, b, c;
 		String op;
 		
-		System.out.println("ìˆ«ì a");
+		System.out.println("?ˆ«? a");
 		a = sc.nextInt();
-		System.out.println("ìˆ«ì b");
+		System.out.println("?ˆ«? b");
 		b = sc.nextInt();
-		System.out.println("ì—°ì‚°ì");
+		System.out.println("?—°?‚°?");
 		op = sc.next();
 		
 		if(op == "+") {

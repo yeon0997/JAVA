@@ -1,4 +1,4 @@
-package ch07;
+package hw07;
 
 public class Bookarray {
 
@@ -7,20 +7,20 @@ public class Bookarray {
 		Book[] library = new Book[5];
 		Book[] nlibrary = new Book[10];
 		
-		library[0] = new Book("íƒœë°±ì‚°ë§¥", "ì¡°ì •ë˜");
-		library[1] = new Book("ë°ë¯¸ì•ˆ", "í—¤ë¥´ë§Œ í—¤ì„¸");
-		library[2] = new Book("ì–´ë–»ê²Œ ì‚´ ê²ƒì¸ê°€", "ìœ ì‹œë§Œ");
-		library[3] = new Book("í† ì§€", "ë°•ê²½ë¦¬");
-		library[4] = new Book("ì–´ë¦°ì™•ì", "ìƒí…ì¥í˜ë¦¬");
+		library[0] = new Book("?ƒœë°±ì‚°ë§?", "ì¡°ì •?˜");
+		library[1] = new Book("?°ë¯¸ì•ˆ", "?—¤ë¥´ë§Œ ?—¤?„¸");
+		library[2] = new Book("?–´?–»ê²? ?‚´ ê²ƒì¸ê°?", "?œ ?‹œë§?");
+		library[3] = new Book("?† ì§?", "ë°•ê²½ë¦?");
+		library[4] = new Book("?–´ë¦°ì™•?", "?ƒ?…ì¥í˜ë¦?");
 		
 		for (int i = 0; i < library.length; i++) {
 			System.out.println(library[i]);
-		} //library[i]ë¥¼ sysoí•˜ë©´ ì£¼ì†Œê°€ ë‚˜ì˜´
+		} //library[i]ë¥? syso?•˜ë©? ì£¼ì†Œê°? ?‚˜?˜´
 		
 		System.out.println();
 		
 		for (int i = 0; i < library.length; i++) {
-			library[i].showbookinfo(); //ë‚´ìš©ì„ ì¡°íšŒí•˜ë ¤ë©´ ë©”ì†Œë“œë¥¼ ì‚¬ìš©í•´ì•¼í•œë‹¤
+			library[i].showbookinfo(); //?‚´?š©?„ ì¡°íšŒ?•˜? ¤ë©? ë©”ì†Œ?“œë¥? ?‚¬?š©?•´?•¼?•œ?‹¤
 		}
 		
 		System.arraycopy(library, 0, nlibrary, 0, 5);	//ë°°ì—´ë³µì‚¬
@@ -28,7 +28,7 @@ public class Bookarray {
 		
 		for (int i = 0; i < nlibrary.length; i++) {
 			if(nlibrary[i] != null)
-			nlibrary[i].showbookinfo(); //ë‚´ìš©ì„ ì¡°íšŒí•˜ë ¤ë©´ ë©”ì†Œë“œë¥¼ ì‚¬ìš©í•´ì•¼í•œë‹¤
+			nlibrary[i].showbookinfo(); //?‚´?š©?„ ì¡°íšŒ?•˜? ¤ë©? ë©”ì†Œ?“œë¥? ?‚¬?š©?•´?•¼?•œ?‹¤
 		}
 		
 	}

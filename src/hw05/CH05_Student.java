@@ -1,4 +1,4 @@
-package CH05;
+package hw05;
 
 public class CH05_Student {
 	

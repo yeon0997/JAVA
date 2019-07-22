@@ -1,20 +1,20 @@
-package ch06;
+package hw06;
 
 public class StudentTest {
 
 	public static void main(String[] args) {
-		//staticë³€ìˆ˜ ì‚¬ìš©ë²•ì•Œê¸°
-		//staticë³€ìˆ˜ëŠ” ê°ì²´ì™€ ê°ì²´ê°€ ê³µë™ìœ¼ë¡œ ì‚¬ìš©í•  ìˆ˜ ìˆë‹¤
+		//staticë³??ˆ˜ ?‚¬?š©ë²•ì•Œê¸?
+		//staticë³??ˆ˜?Š” ê°ì²´?? ê°ì²´ê°? ê³µë™?œ¼ë¡? ?‚¬?š©?•  ?ˆ˜ ?ˆ?‹¤
 //		Student studentkim = new Student("kim", 10000);
 //		studentkim.showinfo();
 //		Student studentlee = new Student("lee", 10000);
 //		studentlee.showinfo();
 		
-		//ê°ì²´ë¥¼ ìƒì„±í•˜ì§€ ì•Šê³  í´ë˜ìŠ¤ ë³€ìˆ˜ê°’ì„ í™•ì¸í•˜ê¸°
-		//staticì˜ ê¸°ëŠ¥
+		//ê°ì²´ë¥? ?ƒ?„±?•˜ì§? ?•Šê³? ?´?˜?Š¤ ë³??ˆ˜ê°’ì„ ?™•?¸?•˜ê¸?
+		//static?˜ ê¸°ëŠ¥
 		//System.out.println(Student.serialnum);
-		//System.out.println(Student.grade); //staticì´ ì•„ë‹ˆì–´ì„œ ì¡°íšŒ ë¶ˆê°€
-		Student.showserial(); //serialì€ staticë³€ìˆ˜ë¼ì„œ ê°ì²´ë¥¼ ìƒì„±í•˜ì§€ì•Šì•„ë„ ì¡°íšŒê°€ ê°€ëŠ¥í•˜ë‹¤
+		//System.out.println(Student.grade); //static?´ ?•„?‹ˆ?–´?„œ ì¡°íšŒ ë¶ˆê?
+		Student.showserial(); //serial?? staticë³??ˆ˜?¼?„œ ê°ì²´ë¥? ?ƒ?„±?•˜ì§??•Š?•„?„ ì¡°íšŒê°? ê°??Š¥?•˜?‹¤
 	}
 
 }

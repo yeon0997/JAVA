@@ -1,4 +1,4 @@
-package ch04;
+package hw04;
 
 public class PR05_2 {
 

@@ -1,4 +1,4 @@
-package CH04;
+package hw04;
 
 import java.util.Scanner;
 

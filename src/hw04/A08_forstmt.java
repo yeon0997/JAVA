@@ -1,4 +1,4 @@
-package ch04;
+package hw04;
 
 public class A08_forstmt {
 
@@ -7,7 +7,7 @@ public class A08_forstmt {
 		
 		int i = 1, j = 1;
 		
-		//중첩된 while
+		//중첩?�� while
 //		while(i <= 9) {
 //			
 //			System.out.println(i);

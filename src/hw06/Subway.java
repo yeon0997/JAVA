@@ -1,4 +1,4 @@
-package CH06;
+package hw06;
 
 public class Subway {
 
@@ -16,8 +16,8 @@ public class Subway {
 	}
 	
 	public void showinfo() {
-		System.out.println("吏��븯泥�" + linenumber + " 吏��븯泥� �듅媛앹� " 
-						+ passengercount + "紐낆씠怨�, �닔�엯�� " + money + "�엯�땲�떎.");
+		System.out.println("吏��븯泥�" + linenumber + " 吏��븯泥� �듅媛앹�? " 
+						+ passengercount + "紐낆?��?��, �닔�엯�� " + money + "�엯�땲�떎.");
 	}
 	
 }

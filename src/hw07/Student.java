@@ -1,4 +1,4 @@
-package CH07;
+package hw07;
 
 public class Student {
 

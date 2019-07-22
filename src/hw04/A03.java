@@ -1,4 +1,4 @@
-package ch04;
+package hw04;
 
 import java.util.Scanner;
 
@@ -11,13 +11,13 @@ public class A03 {
 		int a, b, c;
 		int d;
 		
-		System.out.println("aë¥¼ ìž…ë ¥í•´ì£¼ì„¸ìš”.");
+		System.out.println("aë¥? ?ž…? ¥?•´ì£¼ì„¸?š”.");
 		a = sc.nextInt();
 		
-		System.out.println("bë¥¼ ìž…ë ¥í•´ì£¼ì„¸ìš”.");
+		System.out.println("bë¥? ?ž…? ¥?•´ì£¼ì„¸?š”.");
 		b = sc.nextInt();
 		
-		System.out.println("cë¥¼ ìž…ë ¥í•´ì£¼ì„¸ìš”.");
+		System.out.println("cë¥? ?ž…? ¥?•´ì£¼ì„¸?š”.");
 		c = sc.nextInt();
 		
 		d = a;

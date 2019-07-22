@@ -1,24 +1,24 @@
-//ë°°ì—´ì„ ì–¸
-//ìë£Œí˜•[] ë°°ì—´ì´ë¦„ = new ìë£Œí˜•[ê°œìˆ˜]
-//ìë£Œí˜• ë°°ì—´ì´ë¦„[] = new ìë£Œí˜•[ê°œìˆ˜]
+//ë°°ì—´?„ ?–¸
+//?ë£Œí˜•[] ë°°ì—´?´ë¦? = new ?ë£Œí˜•[ê°œìˆ˜]
+//?ë£Œí˜• ë°°ì—´?´ë¦?[] = new ?ë£Œí˜•[ê°œìˆ˜]
 
-package ch07;
+package hw07;
 
 public class Arraytest {
 	
 	public static void main(String[] args)	{
 		
-		//ì•„ë˜ë‘ê°œëŠ” ê°™ì€ ê²ƒ
+		//?•„?˜?‘ê°œëŠ” ê°™ì? ê²?
 		//int[] studentids = new int[10];
 		//int studentids[] = new int[10];
 		
-		int studentids[] = new int[] {100, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1}; //ê°’ì„ ì´ˆê¸°í™”í•œ ë°°ì—´
+		int studentids[] = new int[] {100, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1}; //ê°’ì„ ì´ˆê¸°?™”?•œ ë°°ì—´
 		
 //		for(int i = 0, num = 10; i < 10; i++, num--)  {
 //		studentids[i] = num;
 //		}
 		
-		for(int i = 0; i < studentids.length; i++) //lengthëŠ” ë°°ì—´ì˜ ê°œìˆ˜ë¥¼ ìë™ìœ¼ë¡œ ì„¼ë‹¤
+		for(int i = 0; i < studentids.length; i++) //length?Š” ë°°ì—´?˜ ê°œìˆ˜ë¥? ??™?œ¼ë¡? ?„¼?‹¤
 		System.out.printf("%3d",studentids[i]);
 
 	}

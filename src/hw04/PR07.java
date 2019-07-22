@@ -1,4 +1,4 @@
-package ch04;
+package hw04;
 
 import java.util.Scanner;
 
@@ -12,7 +12,7 @@ public class PR07 {
 		
 		do {
 
-		System.out.println("ìˆ«ìë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”");
+		System.out.println("?ˆ«?ë¥? ?…? ¥?•´ì£¼ì„¸?š”");
 		i = sc.nextInt();
 			
 		if(i == 0)
