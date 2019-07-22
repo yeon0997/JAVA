@@ -1,4 +1,4 @@
-package CH06;
+package ch06;
 
 public class Subway {
 
@@ -6,7 +6,7 @@ public class Subway {
 	int passengercount;
 	int money;
 	
-	public Subway(String linenumber) {	//�깮�꽦�옄
+	public Subway(String linenumber) {	//생성자
 		this.linenumber = linenumber;
 	}
 	
@@ -16,8 +16,8 @@ public class Subway {
 	}
 	
 	public void showinfo() {
-		System.out.println("吏��븯泥�" + linenumber + " 吏��븯泥� �듅媛앹� " 
-						+ passengercount + "紐낆씠怨�, �닔�엯�� " + money + "�엯�땲�떎.");
+		System.out.println("지하철" + linenumber + " 지하철 승객은 " 
+						+ passengercount + "명이고, 수입은 " + money + "입니다.");
 	}
 	
 }

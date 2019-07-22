@@ -1,4 +1,4 @@
-package CH06;
+package ch06;
 
 public class Bus {
 
@@ -6,7 +6,7 @@ public class Bus {
 	int passengercount;
 	int money;
 	
-	public Bus(int busnumber) {	//�깮�꽦�옄
+	public Bus(int busnumber) {	//생성자
 		this.busnumber = busnumber;
 	}
 	
@@ -20,8 +20,8 @@ public class Bus {
 	}
 	
 	public void showinfo() {
-		System.out.println("踰꾩뒪" + busnumber + "踰덉쓽 �듅媛앹�" 
-						+ passengercount + "紐낆씠怨�, �닔�엯�� " + money + "�엯�땲�떎.");
+		System.out.println("버스" + busnumber + "번의 승객은" 
+						+ passengercount + "명이고, 수입은 " + money + "입니다.");
 	}
 	
 }

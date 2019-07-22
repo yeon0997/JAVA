@@ -1,4 +1,4 @@
-package CH06;
+package ch06;
 
 public class TakeTrans {
 
@@ -6,7 +6,6 @@ public class TakeTrans {
 
 		Student studentjames = new Student("james", 5000);
 		Student studenttomas = new Student("tomas", 10000);
-		Student studentedward = new Student("edward", 10000);
 		
 		Bus bus100 = new Bus(100);
 		studentjames.takeonbus(bus100);
@@ -22,13 +21,10 @@ public class TakeTrans {
 		bus100.showinfo();
 		
 		
-		Subway subwaygreen = new Subway("2�샇�꽑");
+		Subway subwaygreen = new Subway("2호선");
 		studentjames.takesubway(subwaygreen);
 		studentjames.showinfo();
 		subwaygreen.showinfo();
-		
-		Taxi taxi1 = new Taxi(1);
-		studentedward.taketaxi(taxi1);
 		
 	}
 
