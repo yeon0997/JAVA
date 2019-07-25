@@ -7,8 +7,6 @@ public class AbstractTest {
 //		Computer mycom = new Computer();
 		Desktop mycom = new Desktop();
 		mycom.display();
-		
-		
 	}
 
 }
