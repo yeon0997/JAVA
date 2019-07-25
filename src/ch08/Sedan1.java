@@ -6,21 +6,16 @@ public class Sedan1 extends Car1{
 	//private이라면 접근할 수 없다 따라서 set, get이 필요함
 	
 	public void setSpeed(int speed) {
-	//	this.speed = speed;
-	}
-
-	public void setColor(String color) {
-		super.setColor(color);
-	}
-	
-	public String getColor() {
-		return super.getColor();
-	}
-	
-	public void setColor(String color) {
-		return super.getColor(color);
-	}
-	
+		//	this.speed = speed;
+		}
+		
+		public void setColor(String color) {
+			super.setColor(color);
+		}
+		
+		public String getColor() {
+			return super.getColor();
+		}
 	
 	
 }
