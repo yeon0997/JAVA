@@ -9,6 +9,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
@@ -18,6 +19,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
+import java.awt.Image;
+
 import javax.swing.SwingConstants;
 
 public class LoginTest extends JFrame {
@@ -47,28 +50,28 @@ public class LoginTest extends JFrame {
     */
    public LoginTest() {
       setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-      setBounds(100, 100, 286, 271);
+      setBounds(100, 100, 536, 277);
       contentPane = new JPanel();
       contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
       setContentPane(contentPane);
       contentPane.setLayout(null);
       
       JLabel lblUserId = new JLabel("User ID");
-      lblUserId.setBounds(44, 86, 57, 15);
+      lblUserId.setBounds(257, 101, 57, 15);
       contentPane.add(lblUserId);
       
       JLabel lblUserPwd = new JLabel("User PWD");
-      lblUserPwd.setBounds(44, 124, 57, 15);
+      lblUserPwd.setBounds(257, 139, 57, 15);
       contentPane.add(lblUserPwd);
       
       txtUserID = new JTextField();
-      txtUserID.setBounds(113, 83, 116, 21);
+      txtUserID.setBounds(326, 98, 116, 21);
       contentPane.add(txtUserID);
       txtUserID.setColumns(10);
       
       txtUserPWD = new JTextField();
       txtUserPWD.setColumns(10);
-      txtUserPWD.setBounds(113, 121, 116, 21);
+      txtUserPWD.setBounds(326, 136, 116, 21);
       contentPane.add(txtUserPWD);
       
       JButton btnLogin = new JButton("Login");
@@ -85,6 +88,7 @@ public class LoginTest extends JFrame {
             String pwd = "madang";
             
             try {
+            	//Ïó∞Í≤∞ÏÑ§Ï†ï
                Class.forName("oracle.jdbc.driver.OracleDriver");
                conn = DriverManager.getConnection(url, user, pwd);
                sql = "SELECT * FROM members WHERE userid=? AND userpwd = ?";
@@ -95,9 +99,9 @@ public class LoginTest extends JFrame {
                result = pstmt.executeQuery();
                
                if(result.next()) {
-                  JOptionPane.showMessageDialog(null, "∑Œ±◊¿Œ¿Ã º∫∞¯«œø¥Ω¿¥œ¥Ÿ.");
+                  JOptionPane.showMessageDialog(null, "Î°úÍ∑∏Ïù∏ ÏÑ±Í≥µ");
                }else {
-                  JOptionPane.showMessageDialog(null, "∑Œ±◊¿Œ¿Ã Ω«∆–«œø¥Ω¿¥œ¥Ÿ.");
+                  JOptionPane.showMessageDialog(null, "Î°úÍ∑∏Ïù∏ Ïã§Ìå®");
                }
                
             } catch (ClassNotFoundException e1) {
@@ -107,16 +111,10 @@ public class LoginTest extends JFrame {
                // TODO Auto-generated catch block
                e1.printStackTrace();
             }
-            // sql ±∏πÆ ±∏º∫
-            
-            // Prepared Statement ±∏º∫ »ƒ Ω««‡
-            
-            // Ω««‡ ∞·∞˙ »Æ¿Œ
-            
             
          }
       });
-      btnLogin.setBounds(25, 162, 97, 23);
+      btnLogin.setBounds(238, 177, 97, 23);
       contentPane.add(btnLogin);
       
       JButton btnCancel = new JButton("Cancel");
@@ -125,14 +123,21 @@ public class LoginTest extends JFrame {
             System.exit(0);
          }
       });
-      btnCancel.setBounds(138, 162, 97, 23);
+      btnCancel.setBounds(351, 177, 97, 23);
       contentPane.add(btnCancel);
       
       JLabel lblLoginTest = new JLabel("Login Test");
       lblLoginTest.setHorizontalAlignment(SwingConstants.CENTER);
       lblLoginTest.setFont(new Font("Tahoma", Font.BOLD, 13));
-      lblLoginTest.setBounds(92, 10, 82, 43);
+      lblLoginTest.setBounds(305, 25, 82, 43);
       contentPane.add(lblLoginTest);
+      
+      JLabel label = new JLabel("");
+		Image img = new ImageIcon(this.getClass().getResource("/login.png")).getImage();
+		label.setIcon(new ImageIcon(img));
+		label.setBounds(27, 25, 136, 189);
+		contentPane.add(label);
+      
    }
 
 }
