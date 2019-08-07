@@ -6,6 +6,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import net.proteanit.sql.DbUtils;
+
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
@@ -20,6 +23,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.awt.event.ActionEvent;
+import javax.swing.JTable;
+import javax.swing.JScrollPane;
+import java.awt.Color;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import javax.swing.JComboBox;
 
 public class Memberinfo extends JFrame {
 	Connection conn;
@@ -32,6 +41,7 @@ public class Memberinfo extends JFrame {
 	private JTextField txtUserPWD;
 	private JTextField txtPhone;
 	private JTextField txtAddress;
+	private JTable table;
 
 	/**
 	 * Launch the application.
@@ -55,34 +65,36 @@ public class Memberinfo extends JFrame {
 	public Memberinfo() {
 		setTitle("Member Information Form");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 734, 505);
+		setBounds(100, 100, 1012, 616);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(255, 255, 255));
+		contentPane.setForeground(new Color(255, 255, 240));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JLabel lblMemberInformaionForm = new JLabel("Member Informaion Form");
 		lblMemberInformaionForm.setHorizontalAlignment(SwingConstants.CENTER);
-		lblMemberInformaionForm.setFont(new Font("Tahoma", Font.PLAIN, 26));
-		lblMemberInformaionForm.setBounds(185, 46, 322, 40);
+		lblMemberInformaionForm.setFont(new Font("Tahoma", Font.BOLD, 26));
+		lblMemberInformaionForm.setBounds(265, 27, 465, 40);
 		contentPane.add(lblMemberInformaionForm);
 		
 		txtUserID = new JTextField();
-		txtUserID.setBounds(139, 115, 116, 21);
+		txtUserID.setBounds(125, 96, 116, 21);
 		contentPane.add(txtUserID);
 		txtUserID.setColumns(10);
 		
 		txtUserPWD = new JTextField();
-		txtUserPWD.setBounds(139, 154, 116, 21);
+		txtUserPWD.setBounds(125, 135, 116, 21);
 		contentPane.add(txtUserPWD);
 		txtUserPWD.setColumns(10);
 		
 		JLabel lblNewLabel = new JLabel("USER ID");
-		lblNewLabel.setBounds(48, 118, 57, 15);
+		lblNewLabel.setBounds(46, 96, 116, 15);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("USER PWD");
-		lblNewLabel_1.setBounds(48, 157, 79, 15);
+		lblNewLabel_1.setBounds(46, 135, 116, 15);
 		contentPane.add(lblNewLabel_1);
 
 ///////////////button//////////////////////////////////////////////////////////////////////////		
@@ -116,7 +128,7 @@ public class Memberinfo extends JFrame {
 			}
 		});
 		
-		btnSearch.setBounds(38, 363, 97, 23);
+		btnSearch.setBounds(35, 268, 97, 23);
 		contentPane.add(btnSearch);
 		
 		JButton btnAdd = new JButton("ADD");
@@ -141,16 +153,18 @@ public class Memberinfo extends JFrame {
 					
 					if(rst == 1) {
 						JOptionPane.showMessageDialog(null, "1개의 데이터가 삽입됐습니다.");
+						
 					}
 					
 				} catch (SQLException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
+				dataload();
 			}
-			}
+			}//end of actionperformed
 		});
-		btnAdd.setBounds(173, 363, 97, 23);
+		btnAdd.setBounds(144, 268, 97, 23);
 		contentPane.add(btnAdd);
 		
 		JButton btnUpdate = new JButton("UPDATE");
@@ -177,10 +191,11 @@ public class Memberinfo extends JFrame {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
-			}
+				dataload();
+			}//end of actionperformed
 		});
 		
-		btnUpdate.setBounds(308, 363, 97, 23);
+		btnUpdate.setBounds(35, 301, 97, 23);
 		contentPane.add(btnUpdate);
 		
 		JButton btnDelete = new JButton("DELETE");
@@ -203,10 +218,10 @@ public class Memberinfo extends JFrame {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
-				
-			}
+				dataload();
+			}//end of actionperformed
 		});
-		btnDelete.setBounds(443, 363, 97, 23);
+		btnDelete.setBounds(144, 301, 97, 23);
 		contentPane.add(btnDelete);
 		
 		JButton btnExit = new JButton("EXIT");
@@ -216,7 +231,7 @@ public class Memberinfo extends JFrame {
 			}
 		});
 		
-		btnExit.setBounds(578, 363, 97, 23);
+		btnExit.setBounds(144, 334, 97, 23);
 		contentPane.add(btnExit);
 		
 		JButton btnReset = new JButton("RESET");
@@ -230,26 +245,87 @@ public class Memberinfo extends JFrame {
 			}
 		});
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////		
-		btnReset.setBounds(443, 284, 97, 23);
+		btnReset.setBounds(35, 334, 97, 23);
 		contentPane.add(btnReset);
 		
 		JLabel lblPhone = new JLabel("PHONE");
-		lblPhone.setBounds(48, 200, 57, 15);
+		lblPhone.setBounds(46, 178, 116, 15);
 		contentPane.add(lblPhone);
 		
 		JLabel lblAddress = new JLabel("ADDRESS");
-		lblAddress.setBounds(48, 238, 57, 15);
+		lblAddress.setBounds(46, 216, 116, 15);
 		contentPane.add(lblAddress);
 		
 		txtPhone = new JTextField();
-		txtPhone.setBounds(139, 197, 116, 21);
+		txtPhone.setBounds(125, 178, 116, 21);
 		contentPane.add(txtPhone);
 		txtPhone.setColumns(10);
 		
 		txtAddress = new JTextField();
-		txtAddress.setBounds(139, 235, 116, 21);
+		txtAddress.setBounds(125, 216, 116, 21);
 		contentPane.add(txtAddress);
 		txtAddress.setColumns(10);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(285, 96, 679, 447);
+		contentPane.add(scrollPane);
+		
+		table = new JTable();
+		table.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				//테이블을 클릭했을 때 행을 추출하고
+				//추출된 행의 각 컬럼을 왼쪽에 있는 각각의 텍스트박스에 전달한다
+				dbconnect();
+				int row = table.getSelectedRow();
+				String uid = (table.getModel().getValueAt(row, 0)).toString();
+				
+				//uid를 이용하여 db검색하고 검색된 결과를 텍스트 필드에 전달
+				sql= "SELECT * FROM members WHERE userid = ?";
+				
+				try {
+					pstmt = conn.prepareStatement(sql);
+					pstmt.setString(1, uid);
+					
+					result = pstmt.executeQuery();
+					
+					while(result.next()) {
+						String vuserid = result.getString("userid");
+						String vuserpwd = result.getString("userpwd");
+						String vphone = result.getString("userphone");
+						String vaddress = result.getString("useraddr");
+						txtUserID.setText(vuserid);
+						txtUserPWD.setText(vuserpwd);
+						txtPhone.setText(vphone);
+						txtAddress.setText(vaddress);
+					}//end of while
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
+			}
+		});
+		scrollPane.setViewportView(table);
+		
+		JButton btnDataLoad = new JButton("DATA LOAD");
+		btnDataLoad.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				dataload();
+				
+			}//end of action performed()
+		});
+		btnDataLoad.setBounds(35, 510, 206, 23);
+		contentPane.add(btnDataLoad);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setBounds(156, 391, 30, 21);
+		contentPane.add(comboBox);
+		
+		//테이블 데이터를 로드하는 메서드 호출
+		dataload();
+		
 	}//end of memberinfo()
 	
 	void dbconnect() {
@@ -292,9 +368,21 @@ public class Memberinfo extends JFrame {
 		
 		return exist;
 		
-	}
+	}//end of chkDuplicate
 	
-
+	void dataload() {
+		dbconnect();
+		sql = "SELECT userid, userphone, useraddr FROM members";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			result = pstmt.executeQuery();
+			//질의 결과를 table에 넘겨준다
+			table.setModel(DbUtils.resultSetToTableModel(result));
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+	}//end of dataload()
 }
 
 
