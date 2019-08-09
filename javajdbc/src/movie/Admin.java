@@ -6,6 +6,7 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableModel;
 
 import net.proteanit.sql.DbUtils;
 
@@ -68,7 +69,7 @@ public class Admin extends JFrame {
 	 */
 	public Admin() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1105, 530);
+		setBounds(100, 100, 1105, 539);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -118,7 +119,7 @@ public class Admin extends JFrame {
 				int row = table.getSelectedRow();
 				String wtitle = (table.getModel().getValueAt(row, 0)).toString();
 				
-				//uid를 이용하여 db검색하고 검색된 결과를 텍스트 필드에 전달
+				//uid瑜� �씠�슜�븯�뿬 db寃��깋�븯怨� 寃��깋�맂 寃곌낵瑜� �뀓�뒪�듃 �븘�뱶�뿉 �쟾�떖
 				sql= "SELECT * FROM movie WHERE title = ?";
 				
 				try {
@@ -128,6 +129,7 @@ public class Admin extends JFrame {
 					result = pstmt.executeQuery();
 					
 					while(result.next()) {
+					
 						String mtitle = result.getString("title");
 						String mgenre = result.getString("genre");
 						String mage = result.getString("age");
@@ -176,7 +178,7 @@ public class Admin extends JFrame {
 					int rst = pstmt.executeUpdate();
 					
 					if(rst == 1) {
-						JOptionPane.showMessageDialog(null, wtitle + "이 추가됐습니다.");
+						JOptionPane.showMessageDialog(null, wtitle + "�씠 異붽��릱�뒿�땲�떎.");
 					}
 					
 				} catch (SQLException e1) {
@@ -187,7 +189,7 @@ public class Admin extends JFrame {
 
 			}
 		});
-		btnNewButton.setBounds(255, 458, 97, 23);
+		btnNewButton.setBounds(23, 392, 97, 23);
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("UPDATE");
@@ -198,17 +200,17 @@ public class Admin extends JFrame {
 				String wgenre = genre.getText();
 				String wage = age.getText();
 				String wruntime = runtime.getText();
-				sql = "UPDATE movie SET title = ?, genre = ?, age = ?, runtime = ?";
+				sql = "UPDATE movie SET genre = ?, age = ?, runtime = ? where title = ?";
 				
 				try {
 					pstmt = conn.prepareStatement(sql);
-					pstmt.setString(1, wtitle);
-					pstmt.setString(2, wgenre);
-					pstmt.setString(3, wage);
-					pstmt.setString(4, wruntime);
+					pstmt.setString(1, wgenre);
+					pstmt.setString(2, wage);
+					pstmt.setString(3, wruntime);
+					pstmt.setString(4, wtitle);
 					int rst = pstmt.executeUpdate();
 					if(rst == 1) {
-						JOptionPane.showMessageDialog(null, wtitle + "을(를) 수정했습니다.");
+						JOptionPane.showMessageDialog(null, wtitle + "�쓣(瑜�) �닔�젙�뻽�뒿�땲�떎.");
 					}
 				} catch (SQLException e1) {
 					// TODO Auto-generated catch block
@@ -217,18 +219,21 @@ public class Admin extends JFrame {
 				dataload();
 			}
 		});
-		btnNewButton_1.setBounds(414, 458, 97, 23);
+		btnNewButton_1.setBounds(132, 392, 97, 23);
 		contentPane.add(btnNewButton_1);
 		
 		JScrollPane scrollPane_1 = new JScrollPane();
 		scrollPane_1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				
+				
+				
 				dbconnect();
 				int row = table_1.getSelectedRow();
 				String wid = (table_1.getModel().getValueAt(row, 0)).toString();
 				
-				//uid를 이용하여 db검색하고 검색된 결과를 텍스트 필드에 전달
+				//uid瑜� �씠�슜�븯�뿬 db寃��깋�븯怨� 寃��깋�맂 寃곌낵瑜� �뀓�뒪�듃 �븘�뱶�뿉 �쟾�떖
 				sqlmem= "SELECT * FROM memberlist WHERE userid = ?";
 				
 				try {
@@ -239,9 +244,9 @@ public class Admin extends JFrame {
 					
 					while(resultmem.next()) {
 						String mid = resultmem.getString("userid");
-				//		String mpwd = resultmem.getString("userpwd");
+
 						id.setText(mid);
-				//		runtime.setText(mpwd);
+
 					}//end of while
 				} catch (SQLException e1) {
 					// TODO Auto-generated catch block
@@ -261,26 +266,35 @@ public class Admin extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				
 				dbconnect();
-				String wtitle = title.getText();
-
-				sql = "DELETE FROM movie where title = ?";
 				
-				try {
-					pstmt = conn.prepareStatement(sql);
-					pstmt.setString(1, wtitle);
-					int rst = pstmt.executeUpdate();
-					if(rst == 1) {
-						JOptionPane.showMessageDialog(null, wtitle + "을(를) 삭제했습니다.");
-					}
-					
-				} catch (SQLException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
+				int n = table.getSelectedRow();
+				
+				DefaultTableModel tm = (DefaultTableModel)table.getModel();
+				if(n >= 0 && n < table.getRowCount()) {
+					tm.removeRow(n);
 				}
-				dataload();
+				
+				
+//				String wtitle = title.getText();
+//
+//				sql = "DELETE FROM movie where title = ?";
+//				
+//				try {
+//					pstmt = conn.prepareStatement(sql);
+//					pstmt.setString(1, wtitle);
+//					int rst = pstmt.executeUpdate();
+//					if(rst == 1) {
+//						JOptionPane.showMessageDialog(null, wtitle + "�쓣(瑜�) �궘�젣�뻽�뒿�땲�떎.");
+//					}
+//					
+//				} catch (SQLException e1) {
+//					// TODO Auto-generated catch block
+//					e1.printStackTrace();
+//				}
+//				dataload();
 			}
 		});
-		btnNewButton_2.setBounds(570, 458, 97, 23);
+		btnNewButton_2.setBounds(23, 425, 97, 23);
 		contentPane.add(btnNewButton_2);
 		
 		JButton memdele = new JButton("DELETE");
@@ -298,7 +312,7 @@ public class Admin extends JFrame {
 					pstmtmem.setString(1, wid);
 					int rst = pstmtmem.executeUpdate();
 					if(rst == 1) {
-						JOptionPane.showMessageDialog(null, wid + "을(를) 삭제했습니다.");
+						JOptionPane.showMessageDialog(null, wid + "�쓣(瑜�) �궘�젣�뻽�뒿�땲�떎.");
 					}
 				} catch (SQLException e1) {
 					// TODO Auto-generated catch block
@@ -307,7 +321,7 @@ public class Admin extends JFrame {
 				
 			}
 		});
-		memdele.setBounds(951, 458, 97, 23);
+		memdele.setBounds(951, 36, 97, 23);
 		contentPane.add(memdele);
 		
 		JButton btnNewButton_4 = new JButton("SEARCH");
@@ -363,6 +377,33 @@ public class Admin extends JFrame {
 		id.setBounds(733, 38, 116, 21);
 		contentPane.add(id);
 		
+		JButton btnExit = new JButton("EXIT");
+		btnExit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				System.exit(0);
+			}
+		});
+		btnExit.setBounds(951, 467, 97, 23);
+		contentPane.add(btnExit);
+		
+		JButton btnClear = new JButton("CLEAR");
+		btnClear.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				id.setText("");
+				title.setText("");
+				genre.setText("");
+				age.setText("");
+				runtime.setText("");
+				
+			}
+		});
+		btnClear.setBounds(132, 425, 97, 23);
+		contentPane.add(btnClear);
+		
+		JButton btnNewButton_3 = new JButton("New button");
+		btnNewButton_3.setBounds(852, 36, 97, 23);
+		contentPane.add(btnNewButton_3);
+		
 		dataload();
 		
 	}//end of main
@@ -374,11 +415,11 @@ public class Admin extends JFrame {
 			
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
-			System.out.println("드라이버가 로드되지 않았습니다.");
+			System.out.println("�뱶�씪�씠踰꾧� 濡쒕뱶�릺吏� �븡�븯�뒿�땲�떎.");
 			e.printStackTrace();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			System.out.println("데이터베이스 연결에 문제가 있습니다.");
+			System.out.println("�뜲�씠�꽣踰좎씠�뒪 �뿰寃곗뿉 臾몄젣媛� �엳�뒿�땲�떎.");
 			e.printStackTrace();
 		}
       
@@ -396,7 +437,7 @@ public class Admin extends JFrame {
 			result = pstmt.executeQuery();
 			if(result.next()) {
 				exist = true;
-				JOptionPane.showMessageDialog(null, "중복된 ID");
+				JOptionPane.showMessageDialog(null, "以묐났�맂 ID");
 			} else {
 				exist = false;
 			}
@@ -427,5 +468,4 @@ public class Admin extends JFrame {
 			e1.printStackTrace();
 		}
 	}//end of dataload()
-	
 }
