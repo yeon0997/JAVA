@@ -44,9 +44,7 @@ public class Admin extends JFrame {
 	private JTextField age;
 	private JTextField runtime;
 	private JTable table;
-	private JTable table_1;
 	private JTextField search;
-	private JTextField id;
 
 	/**
 	 * Launch the application.
@@ -69,7 +67,7 @@ public class Admin extends JFrame {
 	 */
 	public Admin() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1105, 539);
+		setBounds(100, 100, 712, 539);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -152,8 +150,8 @@ public class Admin extends JFrame {
 		table = new JTable();
 		moviet.setViewportView(table);
 		
-		JButton btnNewButton = new JButton("ADD");
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton add = new JButton("ADD");
+		add.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 				dbconnect();
@@ -178,7 +176,7 @@ public class Admin extends JFrame {
 					int rst = pstmt.executeUpdate();
 					
 					if(rst == 1) {
-						JOptionPane.showMessageDialog(null, wtitle + "�씠 異붽��릱�뒿�땲�떎.");
+						JOptionPane.showMessageDialog(null, wtitle + "이(가) 추가됐습니다.");
 					}
 					
 				} catch (SQLException e1) {
@@ -189,11 +187,11 @@ public class Admin extends JFrame {
 
 			}
 		});
-		btnNewButton.setBounds(23, 392, 97, 23);
-		contentPane.add(btnNewButton);
+		add.setBounds(27, 327, 97, 23);
+		contentPane.add(add);
 		
-		JButton btnNewButton_1 = new JButton("UPDATE");
-		btnNewButton_1.addActionListener(new ActionListener() {
+		JButton update = new JButton("UPDATE");
+		update.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dbconnect();
 				String wtitle = title.getText();
@@ -210,7 +208,7 @@ public class Admin extends JFrame {
 					pstmt.setString(4, wtitle);
 					int rst = pstmt.executeUpdate();
 					if(rst == 1) {
-						JOptionPane.showMessageDialog(null, wtitle + "�쓣(瑜�) �닔�젙�뻽�뒿�땲�떎.");
+						JOptionPane.showMessageDialog(null, wtitle + "이(가) 수정됐습니다.");
 					}
 				} catch (SQLException e1) {
 					// TODO Auto-generated catch block
@@ -219,118 +217,45 @@ public class Admin extends JFrame {
 				dataload();
 			}
 		});
-		btnNewButton_1.setBounds(132, 392, 97, 23);
-		contentPane.add(btnNewButton_1);
+		update.setBounds(136, 327, 97, 23);
+		contentPane.add(update);
 		
-		JScrollPane scrollPane_1 = new JScrollPane();
-		scrollPane_1.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				
-				
-				
-				dbconnect();
-				int row = table_1.getSelectedRow();
-				String wid = (table_1.getModel().getValueAt(row, 0)).toString();
-				
-				//uid瑜� �씠�슜�븯�뿬 db寃��깋�븯怨� 寃��깋�맂 寃곌낵瑜� �뀓�뒪�듃 �븘�뱶�뿉 �쟾�떖
-				sqlmem= "SELECT * FROM memberlist WHERE userid = ?";
-				
-				try {
-					pstmtmem = conn.prepareStatement(sqlmem);
-					pstmtmem.setString(1, wid);
-					
-					resultmem = pstmtmem.executeQuery();
-					
-					while(resultmem.next()) {
-						String mid = resultmem.getString("userid");
-
-						id.setText(mid);
-
-					}//end of while
-				} catch (SQLException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-				
-			}
-		});
-		scrollPane_1.setBounds(697, 69, 351, 379);
-		contentPane.add(scrollPane_1);
-		
-		table_1 = new JTable();
-		scrollPane_1.setViewportView(table_1);
-		
-		JButton btnNewButton_2 = new JButton("DELETE");
-		btnNewButton_2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				dbconnect();
-				
-				int n = table.getSelectedRow();
-				
-				DefaultTableModel tm = (DefaultTableModel)table.getModel();
-				if(n >= 0 && n < table.getRowCount()) {
-					tm.removeRow(n);
-				}
-				
-				
-//				String wtitle = title.getText();
-//
-//				sql = "DELETE FROM movie where title = ?";
-//				
-//				try {
-//					pstmt = conn.prepareStatement(sql);
-//					pstmt.setString(1, wtitle);
-//					int rst = pstmt.executeUpdate();
-//					if(rst == 1) {
-//						JOptionPane.showMessageDialog(null, wtitle + "�쓣(瑜�) �궘�젣�뻽�뒿�땲�떎.");
-//					}
-//					
-//				} catch (SQLException e1) {
-//					// TODO Auto-generated catch block
-//					e1.printStackTrace();
-//				}
-//				dataload();
-			}
-		});
-		btnNewButton_2.setBounds(23, 425, 97, 23);
-		contentPane.add(btnNewButton_2);
-		
-		JButton memdele = new JButton("DELETE");
-		memdele.addActionListener(new ActionListener() {
+		JButton delete = new JButton("DELETE");
+		delete.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 				dbconnect();
 				dataload();
-				String wid = id.getText();
+				String mtitle = title.getText();
 
-				sql = "DELETE FROM memberlist where userid = ?";
+				sql = "DELETE FROM movie where title = ?";
 				
 				try {
-					pstmtmem = conn.prepareStatement(sql);
-					pstmtmem.setString(1, wid);
-					int rst = pstmtmem.executeUpdate();
+					pstmt = conn.prepareStatement(sql);
+					pstmt.setString(1, mtitle);
+					int rst = pstmt.executeUpdate();
 					if(rst == 1) {
-						JOptionPane.showMessageDialog(null, wid + "�쓣(瑜�) �궘�젣�뻽�뒿�땲�떎.");
+						JOptionPane.showMessageDialog(null, "1개의 레코드를 삭제했습니다.");
 					}
+					
 				} catch (SQLException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
-				
+				dataload();
 			}
 		});
-		memdele.setBounds(951, 36, 97, 23);
-		contentPane.add(memdele);
+		delete.setBounds(27, 360, 97, 23);
+		contentPane.add(delete);
 		
-		JButton btnNewButton_4 = new JButton("SEARCH");
-		btnNewButton_4.addActionListener(new ActionListener() {
+		JButton btnsearch = new JButton("SEARCH");
+		btnsearch.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 				dbconnect();
+				dataload();
 				String wtitle = title.getText();
-				sql= "SELECT * FROM movie WHERE title like '%?%'";
+				sql= "SELECT * FROM movie WHERE title = ?";
 				
 				try {
 					pstmt = conn.prepareStatement(sql);
@@ -354,11 +279,11 @@ public class Admin extends JFrame {
 				}
 			}
 		});
-		btnNewButton_4.setBounds(570, 36, 97, 23);
-		contentPane.add(btnNewButton_4);
+		btnsearch.setBounds(570, 36, 97, 23);
+		contentPane.add(btnsearch);
 		
 		search = new JTextField();
-		search.setBounds(255, 37, 291, 21);
+		search.setBounds(308, 37, 238, 21);
 		contentPane.add(search);
 		search.setColumns(10);
 		
@@ -368,28 +293,18 @@ public class Admin extends JFrame {
 		lblWatcha.setBounds(27, 36, 202, 31);
 		contentPane.add(lblWatcha);
 		
-		JLabel label = new JLabel("ID");
-		label.setBounds(697, 41, 57, 15);
-		contentPane.add(label);
-		
-		id = new JTextField();
-		id.setColumns(10);
-		id.setBounds(733, 38, 116, 21);
-		contentPane.add(id);
-		
 		JButton btnExit = new JButton("EXIT");
 		btnExit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				System.exit(0);
 			}
 		});
-		btnExit.setBounds(951, 467, 97, 23);
+		btnExit.setBounds(299, 467, 97, 23);
 		contentPane.add(btnExit);
 		
-		JButton btnClear = new JButton("CLEAR");
-		btnClear.addActionListener(new ActionListener() {
+		JButton clear = new JButton("CLEAR");
+		clear.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				id.setText("");
 				title.setText("");
 				genre.setText("");
 				age.setText("");
@@ -397,12 +312,8 @@ public class Admin extends JFrame {
 				
 			}
 		});
-		btnClear.setBounds(132, 425, 97, 23);
-		contentPane.add(btnClear);
-		
-		JButton btnNewButton_3 = new JButton("New button");
-		btnNewButton_3.setBounds(852, 36, 97, 23);
-		contentPane.add(btnNewButton_3);
+		clear.setBounds(136, 360, 97, 23);
+		contentPane.add(clear);
 		
 		dataload();
 		
@@ -437,7 +348,7 @@ public class Admin extends JFrame {
 			result = pstmt.executeQuery();
 			if(result.next()) {
 				exist = true;
-				JOptionPane.showMessageDialog(null, "以묐났�맂 ID");
+				JOptionPane.showMessageDialog(null, "새로운 ID");
 			} else {
 				exist = false;
 			}
@@ -453,16 +364,12 @@ public class Admin extends JFrame {
 	void dataload() {
 		dbconnect();
 		sql = "SELECT title, genre, age, runtime FROM movie";
-		sqlmem = "SELECT userid, userpwd FROM memberlist";
 		
 		try {
 			pstmt = conn.prepareStatement(sql);
 			result = pstmt.executeQuery();
 			table.setModel(DbUtils.resultSetToTableModel(result));
 			
-			pstmtmem = conn.prepareStatement(sqlmem);
-			resultmem = pstmtmem.executeQuery();
-			table_1.setModel(DbUtils.resultSetToTableModel(resultmem));
 		} catch (SQLException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
