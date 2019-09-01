@@ -1542,3 +1542,13 @@ java.lang.ExceptionInInitializerError
 Caused by: java.lang.NullPointerException
 	at org.eclipse.oomph.p2.internal.core.CachingRepositoryManager$Artifact.<clinit>(CachingRepositoryManager.java:527)
 	... 10 more
+!SESSION 2019-09-01 12:36:30.131 -----------------------------------------------
+eclipse.buildId=4.12.0.I20190605-1800
+java.version=1.8.0_221
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.egit.core 1 0 2019-09-01 12:39:06.808
+!MESSAGE Using Apache MINA sshd as ssh client.
